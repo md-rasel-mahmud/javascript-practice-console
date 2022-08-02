@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even or odd number cheak</title>
+    <style>
+        body{
+            background: #000;
+            font-family: 'Courier New', Courier, monospace;
+            color: antiquewhite;
+        }
+        *{
+            font-size: 1.5rem;
+            text-align: left;
+            color: #fff;
+        }
+        input[type='submit']{
+            transition: all ease .5s;
+            background: rgb(131, 131, 131);
+            border: 2px solid rgb(131, 131, 131);
+        }
+        input[type='submit']:hover{
+            transition: all ease .5s;
+            background: transparent;
+        }
+    </style>
+</head>
+<body>
+    <section style="display: flex; height: 90vh; justify-content: center; align-items: center; flex-direction: column;">
+        <p id="paragraph" style="font-size: 1rem; padding: 0 20%;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur doloribus ullam mollitia temporibus, sequi minus deserunt impedit qui! Alias obcaecati nam ipsa. Cum, tempora numquam.</p>
+        <h1 style="text-transform: uppercase; letter-spacing: 2px; "></h1>
+        <input id="input" style="border-radius: 60px; padding: 15px 20px; height: 50vh; background: transparent; border: 2px solid #fff;" placeholder="Type" type="text">
+
+        <!-- <input style="border-radius: 60px; padding: 5px 40px; margin-top: 10px; cursor: pointer; " type="submit" onclick="evenOddResult()" value="Result"> -->
+        <h1 id="result"></h1>
+    </section>
+    <script>
+        let inputValue = document.querySelector('#input');
+        let paragraph = document.querySelector('#paragraph').innerHTML;
+        
+        let output = document.querySelector('#result').innerText;
+
+        for (let i = 0; i < paragraph.length; i++) {
+            let element = paragraph[i];
+            
+            output.style.color = 'red';
+        }
+
+
+    </script>
+</body>
+</html>

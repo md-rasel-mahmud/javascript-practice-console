@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Largest Number Test</title>
+    <style>
+        * {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            letter-spacing: 2px;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        input {
+            background: transparent;
+            outline: none;
+            border-radius: 40px;
+            border: 1px solid rgb(65, 63, 63);
+            margin: 5px 0;
+            padding: 15px;
+            width: 50%;
+            text-align: center;
+            color: #fff;
+            flex-wrap: wrap;
+        }
+        @media (max-width:768px) {
+            input{ 
+                width: 90%;
+            }
+        }
+        input[type="button"] {
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            transition: all ease .5s;
+            cursor: pointer;
+            background: rgb(65, 63, 63);
+        }
+
+        input[type="button"]:hover {
+            background: transparent;
+            transition: all ease .5s;
+        }
+    </style>
+</head>
+
+<body style="background: #000;">
+    <section id="banner">
+        <div style="display:flex; justify-content: center; flex-direction: column; height: 100vh; align-items: center;"
+            class="container">
+            <h1 style="text-transform: capitalize;  letter-spacing: 2px; color: #fff;">type 3 number to get largest
+                number into 3 number</h1>
+            <input id="first-number" placeholder="Type your 1st number" type="text">
+            <input id="secound-number" placeholder="Type your 2st number" type="text">
+            <input id="third-number" placeholder="Type your 3st number" type="text">
+            <h1  id="result"></h1>
+            <input onclick="largestNumber()" type="button" style="color: #fff;" value="Result">
+        </div>
+    </section>
+    <script>
+        function largestNumber() {
+
+            let firstNumber = document.querySelector('#first-number').value;
+            let secoundNumber = document.querySelector('#secound-number').value;
+            let thirdNumber = document.querySelector('#third-number').value;
+            
+            if (firstNumber === '' && secoundNumber === '' && thirdNumber === '') {
+                let waringColor = document.querySelector('#result');
+                waringColor.innerHTML = "Sorry you don't type anything";
+                waringColor.style.color = 'red';
+            }
+            else {
+                firstNumber = parseFloat(firstNumber);
+                secoundNumber = parseFloat(secoundNumber);
+                thirdNumber = parseFloat(thirdNumber);
+                let waringColor = document.querySelector('#result');
+                waringColor.style.color = 'greenyellow';
+
+                if (firstNumber > secoundNumber && firstNumber > thirdNumber) {
+                    document.querySelector('#result').innerHTML = "First Number is Largest number";
+                } else {
+                    if (secoundNumber > firstNumber && secoundNumber > thirdNumber) {
+                        document.querySelector('#result').innerHTML = "Secound Number is Largest number";
+                    } else {
+                        document.querySelector('#result').innerHTML = "Third Number is Largest number";
+                    }
+                }
+            } 
+        }
+    </script>
+</body>
+
+</html>
